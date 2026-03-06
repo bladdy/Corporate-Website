@@ -1,26 +1,33 @@
+---
+import { useTranslations } from "../lib/i18n";
+
+const lang = Astro.currentLocale;
+const t = useTranslations(lang);
+---
+
 <header class="sticky top-0 z-50 bg-white shadow">
   <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
     <a href="/" class="text-xl font-bold text-blue-600"> CleanPro </a>
 
     <ul class="hidden md:flex gap-8 font-medium">
       <li>
-        <a href="#inicio" class="hover:text-blue-600">Inicio</a>
+        <a href="#inicio" class="hover:text-blue-600">{t.nav.home}</a>
       </li>
 
       <li>
-        <a href="#servicios" class="hover:text-blue-600">Servicios</a>
+        <a href="#servicios" class="hover:text-blue-600">{t.nav.services}</a>
       </li>
 
       <li>
-        <a href="#about" class="hover:text-blue-600">Nosotros</a>
+        <a href="#about" class="hover:text-blue-600">{t.nav.about}</a>
       </li>
 
       <li>
-        <a href="#testimonios" class="hover:text-blue-600">Testimonios</a>
+        <a href="#testimonios" class="hover:text-blue-600">{t.nav.testimonials}</a>
       </li>
 
       <li>
-        <a href="#contacto" class="hover:text-blue-600">Contacto</a>
+        <a href="#contacto" class="hover:text-blue-600">{t.nav.contact}</a>
       </li>
     </ul>
 
@@ -28,7 +35,7 @@
       href="#contacto"
       class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
     >
-      Cotizar
+      {t.nav.contact_us}
     </a>
   </nav>
 </header>

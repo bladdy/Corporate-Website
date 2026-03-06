@@ -4,10 +4,14 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [
-        tailwind()
-    ],
-    vite: {
+  i18n: {
+    defaultLocale: 'es',
+    locales: ['es', 'en']
+  },
+  integrations: [
+    tailwind()
+  ],
+  vite: {
     resolve: {
       alias: {
         '@': '/src',
