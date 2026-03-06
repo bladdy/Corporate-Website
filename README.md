@@ -55,6 +55,7 @@ La página incluye las siguientes secciones:
 ---
 
 # 📂 Estructura del Proyecto
+```bash
 astro-corporate-site
 │
 ├── public
@@ -82,12 +83,6 @@ astro-corporate-site
 ├── astro.config.mjs
 ├── package.json
 └── README.md
-
-
----
-
-# ⚙️ Instalación
-
 
 ---
 
