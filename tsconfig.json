@@ -1,5 +1,29 @@
 {
+  "compilerOptions": {
+    "module": "es2020",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "types": [
+      "astro/client"
+    ],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  },
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
+  "include": [
+    "src/**/*",
+    "astro.config.ts"
+  ],
   "exclude": ["dist"]
 }
