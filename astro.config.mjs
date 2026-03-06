@@ -8,11 +8,11 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   //adapter: node({ mode: 'standalone' }), // Use this for docker production with Node.js
   adapter: vercel(),
-  site: 'https://corporate-website-swart.vercel.app', // Use this for deployment on Vercel
-  trailingSlash: 'always',
+  site: 'https://corporate-website-swart.vercel.app',
+  trailingSlash: 'ignore',
   i18n: {
     locales: ['es', 'en'],
-    defaultLocale: 'en'
+    defaultLocale: 'es'
   },
   integrations: [
     tailwind()

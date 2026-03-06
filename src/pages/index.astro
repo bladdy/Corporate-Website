@@ -1,5 +1,5 @@
 ---
-const lang = Astro.preferredLocale || "en";
+import { defaultLang } from "../i18n/config";
 
-return Astro.redirect(`/${lang}/`);
+return Astro.redirect(`/${defaultLang}/`);
 ---
