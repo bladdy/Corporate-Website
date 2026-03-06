@@ -6,7 +6,7 @@ export function useTranslations(lang: keyof typeof ui) {
   return function t(key: string) {
 
     const keys = key.split(".");
-    let value: any = ui[lang] ??  ui[defaultLang as keyof typeof ui]  ?? {};
+    let value: any = ui[lang] ?? ui[defaultLang] ?? {};
 
     for (const k of keys) {
 

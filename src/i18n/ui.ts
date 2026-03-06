@@ -1,4 +1,4 @@
-import type { notFound } from "astro:i18n";
+
 
 export const ui = {
   en: {

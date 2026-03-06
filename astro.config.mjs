@@ -12,7 +12,7 @@ export default defineConfig({
   trailingSlash: 'always',
   i18n: {
     locales: ['es', 'en'],
-    defaultLocale: 'es'
+    defaultLocale: 'en'
   },
   integrations: [
     tailwind()

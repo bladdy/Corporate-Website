@@ -3,6 +3,6 @@ export const languages = {
   es: "Español"
 };
 
-export const defaultLang = "en/";
+export const defaultLang = "en";
 
 export const showDefaultLang = false;
