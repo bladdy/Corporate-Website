@@ -1,0 +1,54 @@
+---
+const { lang } = Astro.props;
+
+const oppositeLang = lang === "en" ? "es" : "en";
+---
+
+<a
+  id="lang-switcher"
+  data-lang={oppositeLang}
+  class="flex items-center gap-2 border px-3 py-1 rounded hover:bg-gray-100 cursor-pointer"
+>
+
+  {lang === "en" ? (
+
+    <!-- BANDERA ESPAÑA -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32">
+      <path fill="#f1c142" d="M1 10H31V22H1z"></path>
+      <path d="M5,4H27c2.208,0,4,1.792,4,4v3H1v-3c0-2.208,1.792-4,4-4Z" fill="#a0251e"></path>
+      <path d="M5,21H27c2.208,0,4,1.792,4,4v3H1v-3c0-2.208,1.792-4,4-4Z" transform="rotate(180 16 24.5)" fill="#a0251e"></path>
+    </svg>
+
+  ) : (
+
+    <!-- BANDERA USA -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32">
+      <rect x="1" y="4" width="30" height="24" rx="4" fill="#fff"></rect>
+      <path fill="#a62842" d="M1 6H31V8H1zM1 10H31V12H1zM1 14H31V16H1zM1 18H31V20H1zM1 22H31V24H1zM1 26H31V28H1z"></path>
+      <path fill="#102d5e" d="M1 4H16V16H1z"></path>
+    </svg>
+
+  )}
+
+</a>
+
+<script>
+  const switcher = document.getElementById("lang-switcher");
+
+  switcher?.addEventListener("click", () => {
+
+    const newLang = switcher?.dataset.lang ?? "en";
+
+    const { pathname, hash, search } = window.location;
+
+    const segments = pathname.split("/");
+
+    // segments[1] es el lang actual
+    segments[1] = newLang;
+
+    const newPath = segments.join("/");
+
+    window.location.href = newPath + search + hash;
+
+  });
+</script>

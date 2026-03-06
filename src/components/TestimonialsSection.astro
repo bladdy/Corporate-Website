@@ -1,28 +1,37 @@
+---
+import { useTranslations } from "../i18n/utils";
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
 <section id="testimonios" class="py-24 bg-gray-100">
   <div class="max-w-7xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center mb-14">
-      Lo que dicen nuestros clientes
+      {t("testimonials.title")}
     </h2>
 
     <div class="grid md:grid-cols-3 gap-8">
       <div class="bg-white p-6 rounded-xl shadow">
         <p class="text-gray-600 mb-4">
-          Excelente servicio, dejaron mi casa impecable.
+          {t("testimonials.testimonials.0.feedback")}
         </p>
 
-        <strong>Maria Lopez</strong>
+        <strong>{t("testimonials.testimonials.0.name")}</strong>
       </div>
 
       <div class="bg-white p-6 rounded-xl shadow">
-        <p class="text-gray-600 mb-4">Muy profesionales y puntuales.</p>
+        <p class="text-gray-600 mb-4">
+          {t("testimonials.testimonials.1.feedback")}
+        </p>
 
-        <strong>Carlos Ramirez</strong>
+        <strong>{t("testimonials.testimonials.1.name")}</strong>
       </div>
 
       <div class="bg-white p-6 rounded-xl shadow">
-        <p class="text-gray-600 mb-4">Mi oficina quedó perfecta.</p>
+        <p class="text-gray-600 mb-4">
+          {t("testimonials.testimonials.2.feedback")}
+        </p>
 
-        <strong>Ana Torres</strong>
+        <strong>{t("testimonials.testimonials.2.name")}</strong>
       </div>
     </div>
   </div>

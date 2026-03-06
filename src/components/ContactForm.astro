@@ -1,24 +1,29 @@
+---
+import { useTranslations } from "../i18n/utils";
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
 <section id="contacto" class="py-24">
   <div class="max-w-3xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center mb-10">
-      Solicita una Cotización
+      {t("contact_us.title")}
     </h2>
 
     <form class="bg-white shadow-lg rounded-xl p-8 space-y-6">
       <div>
-        <label class="block font-medium mb-1"> Nombre </label>
+        <label class="block font-medium mb-1"> {t("contact_us.form.name")} </label>
 
         <input type="text" class="w-full border rounded-lg px-4 py-2" />
       </div>
 
       <div>
-        <label class="block font-medium mb-1"> Correo </label>
+        <label class="block font-medium mb-1"> {t("contact_us.form.email")} </label>
 
         <input type="email" class="w-full border rounded-lg px-4 py-2" />
       </div>
 
       <div>
-        <label class="block font-medium mb-1"> Mensaje </label>
+        <label class="block font-medium mb-1"> {t("contact_us.form.message")} </label>
 
         <textarea rows="4" class="w-full border rounded-lg px-4 py-2"
         ></textarea>
@@ -27,7 +32,7 @@
       <button
         class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700"
       >
-        Enviar
+        {t("contact_us.form.button")}
       </button>
     </form>
   </div>

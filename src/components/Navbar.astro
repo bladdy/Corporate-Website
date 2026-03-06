@@ -1,41 +1,66 @@
 ---
-import { useTranslations } from "../lib/i18n";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import { useTranslations } from "../i18n/utils";
 
-const lang = Astro.currentLocale;
+const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
 <header class="sticky top-0 z-50 bg-white shadow">
+
   <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="/" class="text-xl font-bold text-blue-600"> CleanPro </a>
+
+    <a href={`/${lang}/`} class="text-xl font-bold text-blue-600">
+      CleanPro
+    </a>
 
     <ul class="hidden md:flex gap-8 font-medium">
+
       <li>
-        <a href="#inicio" class="hover:text-blue-600">{t.nav.home}</a>
+        <a href="#inicio" class="hover:text-blue-600">
+          {t("nav.home")}
+        </a>
       </li>
 
       <li>
-        <a href="#servicios" class="hover:text-blue-600">{t.nav.services}</a>
+        <a href="#servicios" class="hover:text-blue-600">
+          {t("nav.services")}
+        </a>
       </li>
 
       <li>
-        <a href="#about" class="hover:text-blue-600">{t.nav.about}</a>
+        <a href="#about" class="hover:text-blue-600">
+          {t("nav.about")}
+        </a>
       </li>
 
       <li>
-        <a href="#testimonios" class="hover:text-blue-600">{t.nav.testimonials}</a>
+        <a href="#testimonios" class="hover:text-blue-600">
+          {t("nav.testimonials")}
+        </a>
       </li>
 
       <li>
-        <a href="#contacto" class="hover:text-blue-600">{t.nav.contact}</a>
+        <a href="#contacto" class="hover:text-blue-600">
+          {t("nav.contact")}
+        </a>
       </li>
+
     </ul>
 
-    <a
-      href="#contacto"
-      class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
-    >
-      {t.nav.contact_us}
-    </a>
+    <div class="flex items-center gap-4">
+
+      <LanguageSwitcher lang={lang} />
+
+      <a
+        href="#contacto"
+        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+      >
+        {t("nav.contact_us")}
+      </a>
+
+    </div>
+
   </nav>
+
 </header>

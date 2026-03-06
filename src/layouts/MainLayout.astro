@@ -3,17 +3,23 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 interface Props {
-	title: string;
+  title: string;
+  lang: string;
   }
 const { title } = Astro.props;
+const { lang } = Astro.props;
 ---
 
-<html lang="es">
+<html lang={lang} class="scroll-smooth">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="alternate" hreflang="es" href="https://tusitio.com/es" />
+    <link rel="alternate" hreflang="en" href="https://tusitio.com/en" />
+
+    <link rel="canonical" href="https://tusitio.com/" />
     <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -21,13 +27,13 @@ const { title } = Astro.props;
 
     <body class="bg-gray-50 text-gray-800">
 
-        <Navbar />
+        <Navbar  lang={lang} />
 
         <main>
             <slot />
         </main>
 
-        <Footer />
+        <Footer  lang={lang}  />
 
     </body>
 </html>

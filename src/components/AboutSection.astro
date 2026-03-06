@@ -1,21 +1,25 @@
+---
+import { useTranslations } from "../i18n/utils";
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
 <section id="about" class="py-24">
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
     <div>
-      <h2 class="text-3xl font-bold mb-6">Sobre Nuestra Empresa</h2>
+      <h2 class="text-3xl font-bold mb-6">{t("aboutus.title")}</h2>
 
       <p class="text-gray-600 mb-4">
-        Somos una empresa dedicada a brindar servicios profesionales de limpieza
-        para hogares y empresas.
+        {t("aboutus.description")}
       </p>
 
       <p class="text-gray-600">
-        Nuestro equipo está capacitado para garantizar resultados de alta
-        calidad.
+        {t("aboutus.team")}
       </p>
     </div>
 
     <div class="bg-gray-200 h-64 rounded-xl flex items-center justify-center">
-      <span class="text-gray-500"> Imagen de la empresa </span>
+      <span class="text-gray-500"> {t("aboutus.img")} </span>
     </div>
   </div>
 </section>

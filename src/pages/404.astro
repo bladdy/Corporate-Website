@@ -1,0 +1,12 @@
+---
+import { defaultLang } from "../i18n/config";
+
+const url = Astro.url.pathname;
+
+let lang = defaultLang;
+
+if (url.startsWith("/es/")) lang = "es";
+if (url.startsWith("/en/")) lang = "en";
+
+Astro.redirect(`/${lang}/404`);
+---

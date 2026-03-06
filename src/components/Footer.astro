@@ -1,58 +1,63 @@
+---
+import { useTranslations } from "../i18n/utils";
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
 <footer class="bg-gray-900 text-gray-300">
   <div
     class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8"
   >
     <!-- Logo / Descripción -->
     <div>
-      <h2 class="text-xl font-semibold text-white">Empresa</h2>
+      <h2 class="text-xl font-semibold text-white">{t("footer.company_name")}</h2>
       <p class="mt-3 text-sm text-gray-400">
-        Ofrecemos servicios profesionales con altos estándares de calidad.
-        Nuestro objetivo es brindar soluciones eficientes para hogares, oficinas
-        y empresas.
+        {t("footer.description")}
       </p>
     </div>
 
     <!-- Enlaces -->
     <div>
-      <h3 class="text-lg font-semibold text-white">Enlaces</h3>
+      <h3 class="text-lg font-semibold text-white">{t("footer.link")}</h3>
       <ul class="mt-3 space-y-2">
-        <li><a href="/" class="hover:text-white transition">Inicio</a></li>
+        <li><a href="/" class="hover:text-white transition">{t("footer.links.home")}</a></li>
         <li>
-          <a href="/about" class="hover:text-white transition">Nosotros</a>
+          <a href="/about" class="hover:text-white transition">{t("footer.links.about")}</a>
         </li>
         <li>
-          <a href="/services" class="hover:text-white transition">Servicios</a>
+          <a href="/services" class="hover:text-white transition">{t("footer.links.services")}</a>
         </li>
         <li>
-          <a href="/contact" class="hover:text-white transition">Contacto</a>
+          <a href="/contact" class="hover:text-white transition">{t("footer.links.contact")}</a>
         </li>
       </ul>
     </div>
 
     <!-- Servicios -->
     <div>
-      <h3 class="text-lg font-semibold text-white">Servicios</h3>
+      <h3 class="text-lg font-semibold text-white">{t("footer.service")}</h3>
       <ul class="mt-3 space-y-2">
-        <li>Limpieza de Casas</li>
-        <li>Limpieza de Apartamentos</li>
-        <li>Limpieza de Oficinas</li>
-        <li>Limpieza Comercial</li>
+        <li>{t("footer.services.residential")}</li>
+        <li>{t("footer.services.commercial")}</li>
+        <li>{t("footer.services.industrial")}</li>
+        <li>{t("footer.services.specialized")}</li>
+        <li>{t("footer.services.office")}</li>
+        <li>{t("footer.services.deep")}</li>
       </ul>
     </div>
 
     <!-- Contacto -->
     <div>
-      <h3 class="text-lg font-semibold text-white">Contacto</h3>
+      <h3 class="text-lg font-semibold text-white">{t("footer.contact")}</h3>
       <ul class="mt-3 space-y-2 text-sm">
-        <li>📍 Ciudad, País</li>
-        <li>📞 +1 (000) 000-0000</li>
-        <li>✉️ contacto@empresa.com</li>
+        <li>📍 {t("footer.address")}</li>
+        <li>📞 {t("footer.phone")}</li>
+        <li>✉️ {t("footer.email")}</li>
       </ul>
     </div>
   </div>
 
   <!-- Copyright -->
   <div class="border-t border-gray-800 text-center py-4 text-sm text-gray-500">
-    © {new Date().getFullYear()} Empresa. Todos los derechos reservados.
+    © {new Date().getFullYear()} {t("footer.company_name")}. {t("footer.rights")}.
   </div>
 </footer>
