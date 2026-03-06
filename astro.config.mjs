@@ -8,8 +8,7 @@ export default defineConfig({
   adapter: node({
     mode: "standalone"
   }),
-  trailingSlash: 'ignore',
-  site: 'http://localhost:4321/',
+  trailingSlash: 'always',
   i18n: {
     locales: ['es', 'en'],
     defaultLocale: 'es'
