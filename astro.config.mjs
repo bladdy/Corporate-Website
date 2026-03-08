@@ -11,9 +11,13 @@ export default defineConfig({
   site: 'https://corporate-website-swart.vercel.app',
   trailingSlash: 'always',
   i18n: {
-    locales: ['es', 'en'],
-    defaultLocale: 'es'
-  },
+  locales: ["es", "en"],
+  defaultLocale: "en",
+  routing: {
+    prefixDefaultLocale: true,
+    redirectToDefaultLocale: false
+  }
+},
   integrations: [
     tailwind()
   ],
