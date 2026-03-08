@@ -1,12 +1,28 @@
 ---
-import { defaultLang } from "../i18n/config";
+import MainLayout from "../layouts/MainLayout.astro";
 
-const url = Astro.url.pathname;
-
-let lang = defaultLang;
-
-if (url.startsWith("/es/")) lang = "es";
-if (url.startsWith("/en/")) lang = "en";
-
-Astro.redirect(`/${lang}/404`);
+const lang = Astro.url.pathname.startsWith("/es") ? "es" : "en";
 ---
+
+<MainLayout title="404" lang={lang}>
+
+<section class="min-h-[calc(100vh-176px)] flex flex-col items-center justify-center text-center px-6">
+
+  <h1 class="text-7xl font-bold text-blue-900 mb-4">
+    404
+  </h1>
+
+  <p class="text-xl text-gray-600 mb-6">
+    {lang === "es" ? "Página no encontrada" : "Page not found"}
+  </p>
+
+  <a 
+    href={`/${lang}/`}
+    class="px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
+  >
+    {lang === "es" ? "Volver al inicio" : "Go Home"}
+  </a>
+
+</section>
+
+</MainLayout>

@@ -9,7 +9,7 @@ export default defineConfig({
   //adapter: node({ mode: 'standalone' }), // Use this for docker production with Node.js
   adapter: vercel(),
   site: 'https://corporate-website-swart.vercel.app',
-  trailingSlash: 'always',
+  trailingSlash: "ignore",
   integrations: [
     tailwind()
   ],
