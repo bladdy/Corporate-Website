@@ -1,7 +1,6 @@
-import { defineMiddleware } from "astro:middleware";
 import { languages, defaultLang } from "./i18n/config";
 
-export const onRequest = defineMiddleware((context, next) => {
+export function onRequest(context: any,  next: any) {
 
   const { pathname } = context.url;
 
@@ -10,10 +9,12 @@ export const onRequest = defineMiddleware((context, next) => {
 
   if (!languages[lang as keyof typeof languages]) {
 
-    return context.redirect(`/${defaultLang}${pathname}`);
+    if (pathname === "/") {
+      return context.redirect(`/${defaultLang}/`);
+    }
 
+    return context.redirect(`/${defaultLang}${pathname}`);
   }
 
   return next();
-
-});
+}
