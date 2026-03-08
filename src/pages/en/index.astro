@@ -6,28 +6,21 @@ import AboutSection from "../../components/AboutSection.astro";
 import TestimonialsSection from "../../components/TestimonialsSection.astro";
 import ContactForm from "../../components/ContactForm.astro";
 import { useTranslations } from "../../i18n/utils";
-export function getStaticPaths() {
-  return [
-    { params: { lang: "en" } },
-    { params: { lang: "es" } }
-  ];
-}
 
-const { lang } = Astro.params;
-
-const t = useTranslations(lang as "en" | "es");
-
+const lang = "en";
+const t = useTranslations(lang);
 ---
+
 <MainLayout title="Corporate Website" lang={lang}>
 
   <HeroSection lang={lang} />
 
-  <ServicesSection lang={lang}/>
+  <ServicesSection lang={lang} />
 
-  <AboutSection lang={lang}/>
+  <AboutSection lang={lang} />
 
-  <TestimonialsSection lang={lang}/>
+  <TestimonialsSection lang={lang} />
 
-  <ContactForm lang={lang}/>
+  <ContactForm lang={lang} />
 
 </MainLayout>
